@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  hapi:
+    image: hapiproject/hapi:latest
+    container_name: hapi
+    ports:
+      - "8080:8080"
+    # For quick start we use the default H2 DB inside container.
+    # Base URL for REST: http://localhost:8080/fhir
+    # UI: http://localhost:8080/
+    # You can later mount a custom application.yaml or use Postgres.
+
+  node:
+    build: .
+    container_name: node-validate
+    command: ["npm", "run", "start"]
+    environment:
+      FHIR_BASE_URL: "http://hapi:8080/fhir"
+      PORT: "3001"
+    depends_on:
+      - hapi
+    ports:
+      - "3001:3001"

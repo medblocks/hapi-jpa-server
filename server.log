@@ -1,0 +1,3 @@
+Server listening on http://localhost:3000
+Validate default patient: GET http://localhost:3000/validate
+Validate posted resource: POST http://localhost:3000/validate
