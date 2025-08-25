@@ -1,6 +1,6 @@
-## HAPI FHIR Validator Test (Docker)
+## HAPI FHIR JPA Server (Docker)
 
-This repo is a minimal setup to test the HAPI FHIR validator (Java) using the `$validate` operation exposed by a HAPI FHIR server. It spins up:
+This repo is a minimal setup to test the HAPI FHIR JPA Server (Java) using the `$validate` operation exposed by a HAPI FHIR server. It spins up:
 
 - A HAPI FHIR server container
 - A tiny Node.js service that calls the server's `$validate` endpoint
